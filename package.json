@@ -1,0 +1,14 @@
+{
+  "name": "sls-tool",
+  "version": "0.0.1",
+  "description": "A CLI tool that displays available scripts from package.json",
+  "main": "index.js",
+  "repository": "https://github.com/iam-medvedev/sls-tool.git",
+  "homepage": "https://github.com/iam-medvedev/sls-tool",
+  "bugs": "https://github.com/iam-medvedev/sls-tool/issues",
+  "author": "Ilya Medvedev <ilya@medvedev.im>",
+  "license": "MIT",
+  "bin": {
+    "sls": "./index.js"
+  }
+}
