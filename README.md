@@ -12,23 +12,7 @@ or
 $ npm install -g sls-tool
 ```
 
-# Static mode
-
-This mode just show list of scripts.
-
-```
-$ sls
-
-package.json scripts:
-* start (react-scripts start)
-* build (react-scripts build)
-* test (react-scripts test --env=jsdom)
-* eject (react-scripts eject)
-```
-
-# Interactive mode
-
-This mode allows you select and run script from list.
+# Usage
 
 ```
 $ sls -i

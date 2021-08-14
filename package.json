@@ -1,6 +1,6 @@
 {
   "name": "sls-tool",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A CLI tool that displays available scripts from package.json",
   "main": "index.js",
   "repository": "https://github.com/iam-medvedev/sls-tool.git",
@@ -19,6 +19,13 @@
     "list"
   ],
   "dependencies": {
-    "cli-select": "^1.0.2"
+    "cli-select": "^1.1.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  },
+  "scripts": {
+    "start": "node ./index.js",
+    "start:interactive": "node ./index.js -i"
   }
 }

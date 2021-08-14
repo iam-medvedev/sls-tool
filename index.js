@@ -2,16 +2,15 @@
 const path = require("path");
 const fs = require("fs");
 const cliSelect = require("cli-select");
-const { exec } = require("child_process");
+const { execSync } = require("child_process");
 
 const currentDir = process.cwd();
 const packageJsonPath = path.resolve(currentDir, "package.json");
-const isInteractive = process.argv.includes("-i");
 
 /**
  * Interactive mode
  */
-const runInteractive = data => {
+const runInteractive = (data) => {
   const env = Object.assign({}, process.env);
   env.PATH =
     path.resolve("./node_modules/.bin") +
@@ -22,9 +21,9 @@ const runInteractive = data => {
     cleanup: true,
     selected: "●",
     unselected: "○",
-    values: Object.keys(data.scripts).map(key => ({
+    values: Object.keys(data.scripts).map((key) => ({
       command: data.scripts[key],
-      name: key
+      name: key,
     })),
     valueRenderer: (item, selected) => {
       if (selected) {
@@ -32,18 +31,15 @@ const runInteractive = data => {
       }
 
       return `${item.name} — ${item.command}`;
-    }
+    },
   };
 
-  cliSelect(options, result => {
+  cliSelect(options, (result) => {
     if (result.id !== null) {
-      const child = exec(result.value.command, {
+      execSync(result.value.command, {
         cwd: process.cwd(),
-        env: env
-      });
-
-      child.stdout.on("data", function(data) {
-        console.log(data.toString());
+        env: env,
+        stdio: "inherit",
       });
     } else {
       console.log("Bye");
@@ -51,22 +47,14 @@ const runInteractive = data => {
   });
 };
 
-/**
- * Static mode
- */
-const runStatic = data => {
-  Object.keys(data.scripts).forEach(key => {
-    console.log(`* ${key} (${data.scripts[key]})`);
-  });
-};
-
-const run = () => {
+// Start
+(() => {
   if (fs.existsSync(packageJsonPath)) {
     try {
       const data = require(packageJsonPath);
       if (data && data.scripts) {
         console.log("package.json scripts:");
-        isInteractive ? runInteractive(data) : runStatic(data);
+        runInteractive(data);
       } else {
         console.error("package.json does not contains any scripts 🤔");
       }
@@ -76,6 +64,4 @@ const run = () => {
   } else {
     console.error("package.json is not exists in current folder 😞");
   }
-};
-
-run();
+})();

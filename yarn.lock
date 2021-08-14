@@ -2,14 +2,19 @@
 # yarn lockfile v1
 
 
-ansi-escapes@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.1.0.tgz#f73207bb81207d75fd6c83f125af26eea378ca30"
-  integrity sha512-UgAb8H9D41AQnu/PbWlCofQVcnV4Gs2bBJi9eZPxfU/hgglFh3SMDMENRIqdr7H6XFnXdoknctFByVsCOotTVw==
+ansi-escapes@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-3.2.0.tgz#8780b98ff9dbf5638152d1f1fe5c1d7b4442976b"
+  integrity sha512-cBhpre4ma+U0T1oM5fXg7Dy1Jw7zzwv7lt/GoCpr+hDQJoYnKVPLL4dCvSEFMmQurOQvSrwT7SL/DAlhBI97RQ==
 
-cli-select@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/cli-select/-/cli-select-1.0.2.tgz#185c9246b018f0fa014fce2bdeaf4301bbdd552b"
-  integrity sha512-V3rne+3zFQcwcI/5QpxnQdovY7sjyG5NsvMBcWI+EQDHLeMQ9yLm7AFXW1iLtUUXKjEIxg03ZCMNbQFvyzoSTQ==
+cli-select@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/cli-select/-/cli-select-1.1.2.tgz#456dced464b3346ca661b16a0e37fc4b28db4818"
+  integrity sha512-PSvWb8G0PPmBNDcz/uM2LkZN3Nn5JmhUl465tTfynQAXjKzFpmHbxStM6X/+awKp5DJuAaHMzzMPefT0suGm1w==
   dependencies:
-    ansi-escapes "^3.0.0"
+    ansi-escapes "^3.2.0"
+
+prettier@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
