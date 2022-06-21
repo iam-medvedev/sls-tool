@@ -1,16 +1,19 @@
 {
   "name": "sls-tool",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A CLI tool that displays available scripts from package.json",
   "main": "index.js",
   "repository": "https://github.com/iam-medvedev/sls-tool.git",
   "homepage": "https://github.com/iam-medvedev/sls-tool",
   "bugs": "https://github.com/iam-medvedev/sls-tool/issues",
   "author": "Ilya Medvedev <ilya@medvedev.im>",
-  "license": "MIT",
+  "license": "WTFPL",
   "bin": {
     "sls": "./index.js"
   },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "scripts",
     "package",
@@ -22,7 +25,7 @@
     "cli-select": "^1.1.2"
   },
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "prettier": "^2.7.1"
   },
   "scripts": {
     "start": "node ./index.js",
